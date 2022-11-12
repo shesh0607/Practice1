@@ -1,4 +1,16 @@
-Shesh  obilwar
-SheshObilwar
-System.out.println("Hello World! Namskar");
+public class Alert {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.get("https://letcode.in/alert");
+		driver.findElement(By.id("accept")).click();
+		Thread.sleep(2000);
+		driver.switchTo().alert().accept();
+		driver.manage().window().maximize();
+	}
+
+}
 
